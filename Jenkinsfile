@@ -3,7 +3,8 @@ node(){
     checkout scm
 
     stage 'Build Maven Project'
-    def maven = tool 'MAVEN'
-    sh '${maven}/bin/mvn clean install'
+    def mvnHome = tool 'MAVEN_TOOL'
+    sh "echo ${mvnHome}"
+    sh "${mvnHome}/bin/mvn clean install"
 
 }
