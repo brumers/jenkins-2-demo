@@ -32,7 +32,7 @@ public class AppTest {
     @Test
     public void should_add_new_person_to_map(TestContext context) {
         final Async async = context.async();
-        vertx.createHttpClient().put(8080, "localhost", "/person/bob/smith",
+        vertx.createHttpClient().put(8088, "localhost", "/person/bob/smith",
                 response -> {
                     context.assertEquals(200, response.statusCode());
                     context.assertNotNull(dataSource.getPeople("bob", "smith"));
